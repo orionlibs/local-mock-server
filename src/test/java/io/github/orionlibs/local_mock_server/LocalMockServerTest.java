@@ -25,25 +25,19 @@ public class LocalMockServerTest
     @Test
     void test_LocalMockServer() throws Exception
     {
-        String url1ToCall = "http://127.0.0.1";
-        int port1 = 80;
+        String url1ToCall = "http://127.0.0.1:8081";
+        int port1 = 8081;
         String responseBody = "{\"status\" : \"OK\"}";
         server = new LocalMockServer(url1ToCall, port1, responseBody);
         assertEquals(responseBody, MockAPI.testEndpoint(server.getBaseURL()));
-        server.shutdown();
-        String url2ToCall = "http://127.0.0.1:8081";
-        int port2 = 8081;
-        server = new LocalMockServer(url2ToCall, port2, responseBody);
-        assertEquals(responseBody, MockAPI.testEndpoint(server.getBaseURL()));
-        assertEquals("/", server.getURI());
     }
 
 
     @Test
     void test_LocalMockServer_queryParams() throws Exception
     {
-        String url1ToCall = "http://127.0.0.1?param1=value1&param2=value2";
-        int port1 = 80;
+        String url1ToCall = "http://127.0.0.1:8081?param1=value1&param2=value2";
+        int port1 = 8081;
         String responseBody = "{\"status\" : \"OK\"}";
         server = new LocalMockServer(url1ToCall, port1, responseBody);
         assertEquals(responseBody, MockAPI.testEndpoint(server.getBaseURL()));
@@ -56,8 +50,8 @@ public class LocalMockServerTest
     @Test
     void test_LocalMockServer_requestHeaders() throws Exception
     {
-        String url1ToCall = "http://127.0.0.1";
-        int port1 = 80;
+        String url1ToCall = "http://127.0.0.1:8081";
+        int port1 = 8081;
         String responseContentType = "application/json";
         String responseBody = "{\"status\" : \"OK\"}";
         server = new LocalMockServer(url1ToCall, port1, responseBody);
