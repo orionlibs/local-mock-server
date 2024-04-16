@@ -4,7 +4,7 @@
     <artifactId>local-mock-server</artifactId>
     <version>1.0.1</version>
     <name>Orion Local Mock Server</name>
-    <description>A local server mocking responses that can be used by testing frameworks</description>
+    <description>A local server mocking responses that can be used by testing frameworks.</description>
     <url>https://github.com/orionlibs/local-mock-server</url>
 
 
